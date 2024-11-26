@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JDA for Discord bot
+    implementation 'net.dv8tion:JDA:5.0.0-beta.13'
+
+    // OkHttp for Google API calls
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+
+    // Gson for JSON handling
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes(
+            'Main-Class': 'bot.DiscordBot' // Entry point for the application
+        )
+    }
+}
